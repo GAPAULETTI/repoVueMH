@@ -36,10 +36,10 @@
             </li>
             
           </ul>
-          <form class="d-flex" role="search">
+         <!--  <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
@@ -60,15 +60,17 @@
       </nav>
     </div>
     <main  id="app">
+      <!-- Checks and Search -->
     <div class="container d-flex">
       <form class="d-flex col-10 " role="search">
         <fieldset v-if="categories" v-for="each of categories" class="d-md-flex justify-content-center align-items-center">
           <label :for="each">{{each}}</label>
-          <input type="checkbox" class="m-1 s-checks" :name="each" :id="each" :value="each" >
+          <input v-model="checks" v-on:change="filterData()" type="checkbox" class="m-1 s-checks" :name="each" :id="each" :value="each" >
         </fieldset>
-        <input class="d-flex col-2 align-content-end" type="search" name="" id="">
+        <input v-model="text" v-on:keyud="filterData()" class="d-flex col-2 align-content-end" type="search" name="" id="">
       </form>
     </div>
+    <!-- Events card -->
     <div class="d-flex flex-row justify-content-md-around flex-wrap">
      <template v-for="each of events">
       <div class="card m-3" style="width: 18rem;">

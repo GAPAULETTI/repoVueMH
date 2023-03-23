@@ -5,7 +5,9 @@ const app = createApp( {
     data(){
         return {
             events: [],
-            categories: []
+            categories: [],
+            checks: [],
+            text:[]
         }
     },
     created(){
@@ -41,7 +43,10 @@ const app = createApp( {
             console.log(error)
         }
 
-    }
+    },
+        filterData(){
+            
+        }
     }
 
 })
