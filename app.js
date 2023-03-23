@@ -4,11 +4,13 @@ const url = 'https://mindhub-ab35.onrender.com/api/amazing-events'
 const app = createApp( {
     data(){
         return {
-            events: []
+            events: [],
+            categories: []
         }
     },
     created(){
         this.fetchApi()
+        this.getCategories()
         /* fetch(url)
         .then( res => res.json() )
         .then(data => {
@@ -26,10 +28,21 @@ const app = createApp( {
         }catch(error){
             console.log(error)
         }
+        },
+        async getCategories(){
+            try{
+                let response = await fetch(url)
+                response = await response.json()
+                response = response.events.map(each => each.category)
+                response = [...new Set(response)]
+                console.log(response)
+                this.categories = response
+        }catch(error){
+            console.log(error)
         }
 
-    },
-
+    }
+    }
 
 })
 app.mount('#app')

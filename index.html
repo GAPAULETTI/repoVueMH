@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <title>Document</title>
+    <title>Amazing Events by Vue</title>
   </head>
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -24,8 +24,8 @@
               <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                Menu
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -34,9 +34,7 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
+            
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,7 +45,31 @@
     </nav>
   </header>
   <body>
-    <div id="app" class="d-flex flex-row justify-content-between flex-wrap">
+    <div>
+      <nav aria-label="..." class="w-100 d-flex">
+        <ul class="pagination w-100 d-flex justify-content-center bg-dark" >
+         
+          <li class="page-item active"><a class="page-link" href="#">Home</a></li>
+          <li class="page-item " aria-current="page"><a class="page-link" href="#">Detail</a></li>
+          <li class="page-item " aria-current="page"><a class="page-link" href="#">Contact</a></li>
+          <li class="page-item"><a class="page-link" href="#">Stats</a></li>
+          <li class="page-item"><a class="page-link" href="#">Past Events</a></li>
+          <li class="page-item"><a class="page-link" href="#">Upcoming Events</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+    <main  id="app">
+    <div class="container d-flex">
+      <form class="d-flex col-10 " role="search">
+        <fieldset v-if="categories" v-for="each of categories" class="d-md-flex justify-content-center align-items-center">
+          <label :for="each">{{each}}</label>
+          <input type="checkbox" class="m-1 s-checks" :name="each" :id="each" :value="each" >
+        </fieldset>
+        <input class="d-flex col-2 align-content-end" type="search" name="" id="">
+      </form>
+    </div>
+    <div class="d-flex flex-row justify-content-md-around flex-wrap">
      <template v-for="each of events">
       <div class="card m-3" style="width: 18rem;">
         <img v-bind:src="each.image " class="card-img-top" style="height: 12rem;" alt="event">
@@ -56,14 +78,14 @@
         <p class="card-text">{{each.description}}</p>
         <div class="row">
         <p class="col">u$s {{each.price}}</p>
-        <a href="./detail.html?id={{each.id}}" class="btn btn-primary col">Detail</a>
+        <a v-bind:href="'./detail.html?id='+each.id" class="btn btn-primary col">Detail</a>
         </div>
         </div>
         </div> 
     </template>
     </div>
     
-    
+  </main>
     
     
     
