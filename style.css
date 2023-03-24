@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.card:hover{
+    padding: 10px;
+    box-shadow:
+         inset 0 -3em 3em rgba(0,0,0,0.1),
+               0 0  0 2px rgb(255,255,255),
+               0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+.card-d{
+    padding: 10px;
+    box-shadow:
+         inset 0 -3em 3em rgba(0,0,0,0.1),
+               0 0  0 2px rgb(255,255,255),
+               0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+.card-d img{
+    padding-right: 1em;
+}
+.head1{
+    background-color: black;
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+.flecha{
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    margin: 0;
+
+}
+.flecha a{
+    text-decoration: none;
+  
+}
+
+.contact-main{
+    background: linear-gradient(110deg,rgb(156, 240, 156), rgb(7, 46, 6),rgb(156, 240, 156) );
+    background-size: cover;
+    /* background-image: url(./img/bg-blackBlue.jpg);
+    object-fit: contain;
+    background-repeat: no-repeat; */
+    
+}
+.form-check-label, .form-control{
+    font-size: small;
+}
+form{
+    border: 5px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    text-align: center;
+    padding: 1em;
+    font-size: large;
+
+}
+.form-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em ;
+}
+.validador{
+    display: none;
+}
+.table{
+    font-size: small;
+    width: 75%;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imagen{
+    width: 90%;
+   /*  object-fit: ver; */
+
+}
+main{
+   
+    min-height: 100vh;
+} 
+footer{
+    max-width: 100%;
+}
+
+.search-var{
+    background-color: rgb(140, 148, 150);
+    border-radius: 1em;
+
+}
+.check_cat{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.contact-input{
+    display: flex;
+    justify-content: end;
+
+}
+.form-check-input{
+    border-radius: 3em;
+   
+    
+}
+.form-check-label{
+    margin-right: 1em;
+    margin-left: 1em;
+}

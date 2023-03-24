@@ -76,13 +76,13 @@
     </div>
     <main  id="app">
       <!-- Checks and Search -->
-    <div class="container d-flex">
+    <div class="container d-md-flex w-100 ">
       <form class="d-flex col-10 " role="search">
-        <fieldset v-if="categories" v-for="each of categories" class="d-md-flex justify-content-center align-items-center">
-          <label :for="each">{{each}}</label>
+        <fieldset v-if="categories" v-for="each of categories" class="d-lg-flex justify-content-center align-items-center">
+          <label :for="each" class="d-flex ms-2">{{each}}</label>
           <input v-model="checks" v-on:change="filterData()" type="checkbox" class="m-1 s-checks" :name="each" :id="each" :value="each" >
         </fieldset>
-        <input v-model="text" v-on:keyup="filterData()" class="d-flex col-2 align-content-end" type="search" name="" id="">
+        <input v-model="text" v-on:keyup="filterData()" class="d-flex ms-5 col-2 align-content-end" style="width: 180px;" type="search" name="" id="">
       </form>
     </div>
     <!-- Events card -->
@@ -110,6 +110,6 @@
     
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="app.js"></script> 
+    <script src="upcoming.js"></script> 
   </body>
   </html>
